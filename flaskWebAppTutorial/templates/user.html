@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+{% block title %}User{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+<form action="#" method="POST">
+  <input type="email" name="email" placeholder="Enter Email" value="{{email if email}}"/>
+  <input type="submit" value="submit"/>
+</form>
+{% endblock %}
+
+<!--
+value : input 태그에 기본값. 이 상태에서 버튼을 클릭하면 기본값이 전송
+placeholder : 기본값이 아니라, 무엇을 입력해야 하는지 안내하는 문구를 넣고 싶을 때. (화면 상에는 그 문자열이 보이지만, 버튼을 클릭했을 때 아무 값도 전송되지 않음)
+
+
+-->

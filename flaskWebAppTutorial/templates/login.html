@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+                                  <!-- <form> 태그의 action 속성은 폼 데이터(form data)를 서버로 보낼 때 해당 데이터가 도착할 URL을 명시 -->
+<form action="#" method="post">   <!-- <form action="URL"> ="#" 은  '/' 과 동일 페이지, -->
+  <p>Name: </p>
+  <p><input type="text" name="nm"/></p>
+  <p><input type="submit" value="submit"/></p> <!-- <input type=“submit”>는 서버의 폼 핸들러(form handler)로 폼 데이터(form date)를 전송하는 제출 버튼(submit button)을 정의 -->
+</form>
+{% endblock %}
+
